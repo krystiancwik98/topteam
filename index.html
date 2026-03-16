@@ -483,6 +483,74 @@ font-size:15px;
       .btn{width:100%}
       .hero-image{min-height:360px}
     }
+    .lead-form{
+margin-top:30px;
+display:flex;
+flex-direction:column;
+gap:18px;
+max-width:520px;
+}
+
+.form-row{
+display:flex;
+flex-direction:column;
+gap:6px;
+}
+
+.form-row label{
+font-weight:600;
+font-size:14px;
+color:#ddd;
+}
+
+.lead-form input,
+.lead-form select,
+.lead-form textarea{
+padding:16px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.04);
+color:white;
+font-size:15px;
+transition:all .2s ease;
+}
+
+.lead-form input:focus,
+.lead-form select:focus,
+.lead-form textarea:focus{
+border-color:#d6aa52;
+outline:none;
+box-shadow:0 0 0 3px rgba(214,170,82,.15);
+}
+
+.consent{
+display:flex;
+gap:10px;
+align-items:flex-start;
+font-size:13px;
+color:#aaa;
+}
+
+.consent input{
+margin-top:3px;
+}
+
+.lead-form button{
+margin-top:10px;
+padding:16px;
+border:none;
+border-radius:14px;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+background:linear-gradient(135deg,#d6aa52,#ffce72);
+color:#111;
+transition:transform .2s ease;
+}
+
+.lead-form button:hover{
+transform:translateY(-2px);
+}
   </style>
 </head>
 
@@ -961,8 +1029,7 @@ Sprawdź czy kwalifikujesz się do współpracy
 Wypełnij formularz. Skontaktuję się z Tobą w ciągu 24h.
 </p>
 
-<form class="lead-form"
-https://formspree.io/f/mwvrrnlymethod="POST">
+<form class="lead-form" action="https://formspree.io/f/mvvrrnly" method="POST">
 
 <input type="hidden" name="_subject" value="Nowy lead TOPTEAM">
 
@@ -975,7 +1042,10 @@ https://formspree.io/f/mwvrrnlymethod="POST">
 <label>Numer telefonu</label>
 <input type="tel" name="telefon" placeholder="Numer telefonu" required>
 </div>
-
+<div class="form-row">
+<label>Email</label>
+<input type="email" name="email" placeholder="Twój email" required>
+</div>
 <div class="form-row">
 <label>Co chcesz osiągnąć?</label>
 <select name="cel" required>
@@ -992,7 +1062,7 @@ https://formspree.io/f/mwvrrnlymethod="POST">
 <label>Dlaczego chcesz zacząć właśnie teraz?</label>
 <textarea name="motywacja"
 rows="5"
-placeholder="Np. brak formy, bóle pleców, chęć poprawy sylwetki itd."
+placeholder="Np. brak energii, słaba forma, bóle pleców, ważne wydarzenie w życiu, chęć poprawy sylwetki"
 required></textarea>
 </div>
 
