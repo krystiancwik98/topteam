@@ -504,8 +504,28 @@ color:#ddd;
 }
 
 .lead-form input,
-.lead-form select,
 .lead-form textarea{
+
+padding:16px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.04);
+color:white;
+font-size:15px;
+transition:all .2s ease;
+
+}
+
+.lead-form select{
+
+padding:16px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,.15);
+background:#1a1d22;
+color:white;
+font-size:15px;
+
+}
 padding:16px;
 border-radius:12px;
 border:1px solid rgba(255,255,255,.15);
@@ -550,6 +570,17 @@ transition:transform .2s ease;
 
 .lead-form button:hover{
 transform:translateY(-2px);
+}
+    input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+
+-webkit-box-shadow: 0 0 0 1000px rgba(255,255,255,.04) inset !important;
+box-shadow: 0 0 0 1000px rgba(255,255,255,.04) inset !important;
+-webkit-text-fill-color:#fff !important;
+
 }
   </style>
 </head>
@@ -1029,7 +1060,7 @@ Sprawdź czy kwalifikujesz się do współpracy
 Wypełnij formularz. Skontaktuję się z Tobą w ciągu 24h.
 </p>
 
-<form class="lead-form" action="https://formspree.io/f/mvvrrnly" method="POST">
+<form class="lead-form" action="https://formspree.io/f/mwvrrnly" method="POST">
 
 <input type="hidden" name="_subject" value="Nowy lead TOPTEAM">
 
