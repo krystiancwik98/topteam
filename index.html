@@ -951,23 +951,62 @@ font-size:15px;
         </div>
 
         <div class="card contact-card form-shell" id="formularz">
-          <div class="eyebrow"><span class="dot"></span> Formularz zgłoszeniowy</div>
-          <h2 style="margin-top:14px;">Tu wstawisz formularz kwalifikacyjny.</h2>
-          <p>
-            Najlepiej użyć Tally albo Google Forms. Gdy będziesz mieć link, podmienimy sekcję poniżej.
-          </p>
+         <div class="eyebrow"><span class="dot"></span> Formularz zgłoszeniowy</div>
 
-          <div class="form-placeholder">
-            <div>
-              <strong style="display:block;font-size:22px;margin-bottom:12px;color:#fff;">
-                Miejsce na formularz
-              </strong>
-              <div>
-                Po utworzeniu formularza w Tally lub Google Forms<br>
-                wkleisz tutaj embed i sekcja zacznie zbierać zgłoszenia.
-              </div>
-            </div>
-          </div>
+<h2 style="margin-top:14px;">
+Sprawdź czy kwalifikujesz się do współpracy
+</h2>
+
+<p>
+Wypełnij formularz. Skontaktuję się z Tobą w ciągu 24h.
+</p>
+
+<form class="lead-form"
+action="https://formspree.io/f/XXXXXXX"
+method="POST">
+
+<input type="hidden" name="_subject" value="Nowy lead TOPTEAM">
+
+<div class="form-row">
+<label>Imię</label>
+<input type="text" name="imie" placeholder="Twoje imię" required>
+</div>
+
+<div class="form-row">
+<label>Numer telefonu</label>
+<input type="tel" name="telefon" placeholder="Numer telefonu" required>
+</div>
+
+<div class="form-row">
+<label>Co chcesz osiągnąć?</label>
+<select name="cel" required>
+<option value="">Wybierz cel</option>
+<option>Redukcja tkanki tłuszczowej</option>
+<option>Budowa mięśni</option>
+<option>Pozbycie się bólu pleców</option>
+<option>Poprawa kondycji</option>
+<option>Powrót do formy</option>
+</select>
+</div>
+
+<div class="form-row">
+<label>Dlaczego chcesz zacząć właśnie teraz?</label>
+<textarea name="motywacja"
+rows="5"
+placeholder="Np. brak formy, bóle pleców, chęć poprawy sylwetki itd."
+required></textarea>
+</div>
+
+<label class="consent">
+<input type="checkbox" required>
+Wyrażam zgodę na kontakt w sprawie treningu personalnego
+</label>
+
+<button type="submit" class="btn btn-primary">
+Chcę rozpocząć współpracę
+</button>
+
+</form>
         </div>
       </div>
     </section>
