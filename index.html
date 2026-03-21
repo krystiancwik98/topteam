@@ -534,19 +534,10 @@ transition:all .2s ease;
 }
 
 .lead-form select{
-
 padding:16px;
 border-radius:12px;
 border:1px solid rgba(255,255,255,.15);
 background:#1a1d22;
-color:white;
-font-size:15px;
-
-}
-padding:16px;
-border-radius:12px;
-border:1px solid rgba(255,255,255,.15);
-background:rgba(255,255,255,.04);
 color:white;
 font-size:15px;
 transition:all .2s ease;
@@ -598,6 +589,41 @@ select:-webkit-autofill {
 box-shadow: 0 0 0 1000px #1a1d22 inset !important;
 -webkit-text-fill-color:#fff !important;
 
+}
+    /* STICKY CTA MOBILE */
+.sticky-cta{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:14px 16px;
+  background:rgba(11,13,17,.92);
+  backdrop-filter:blur(10px);
+  border-top:1px solid var(--line);
+  display:none;
+  z-index:999;
+}
+
+.sticky-cta a{
+  width:100%;
+  display:block;
+  text-align:center;
+  padding:16px;
+  border-radius:14px;
+  font-weight:800;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#111;
+  box-shadow:0 10px 30px rgba(214,170,82,.3);
+}
+
+@media (max-width:768px){
+  .sticky-cta{
+    display:block;
+  }
+
+  body{
+    padding-bottom:90px;
+  }
 }
   </style>
 </head>
@@ -751,64 +777,146 @@ box-shadow: 0 0 0 1000px #1a1d22 inset !important;
 
     <section class="section" id="oferta">
       <div class="container">
-        <div class="section-head">
-          <div class="eyebrow"><span class="dot"></span> Formy współpracy</div>
-          <h2>Wybierz model współpracy dopasowany do siebie.</h2>
-          <p>
-            Możesz działać ze mną stacjonarnie, hybrydowo albo całkowicie online.
-          </p>
-        </div>
 
-        <div class="grid-3">
-          <article class="card service-card">
-            <div class="tag">Najbardziej kompleksowo</div>
-            <h3>Program Metamorfoza 90 dni</h3>
-            <p>
-              Trening personalny 1:1 dla osób, które chcą najmocniejszej zmiany sylwetki,
-              zdrowia i codziennych nawyków.
-            </p>
-            <ul>
-              <li>indywidualne treningi personalne</li>
-              <li>plan działania dopasowany do Twojego celu</li>
-              <li>strategia żywieniowa lub makro</li>
-              <li>analiza postępów i korekty</li>
-              <li>stały kontakt i prowadzenie</li>
-            </ul>
-          </article>
+  <!-- HEADER -->
+  <div class="section-head">
+    <div class="eyebrow"><span class="dot"></span> Programy i współpraca</div>
+    <h2>Wybierz program i poziom prowadzenia dopasowany do siebie.</h2>
+    <p>
+      Najpierw wybierasz cel. Następnie dopasowujemy poziom prowadzenia,
+      który najszybciej doprowadzi Cię do efektu.
+    </p>
+  </div>
 
-          <article class="card service-card">
-            <div class="tag">Elastycznie</div>
-            <h3>Współpraca hybrydowa</h3>
-            <p>
-              Połączenie prowadzenia online i spotkań stacjonarnych dla osób,
-              które chcą regularnej kontroli, ale trenują też samodzielnie.
-            </p>
-            <ul>
-              <li>2 spotkania stacjonarne w miesiącu</li>
-              <li>indywidualny plan treningowy</li>
-              <li>strategia żywieniowa</li>
-              <li>cotygodniowy check-in</li>
-              <li>kontakt i korekty planu</li>
-            </ul>
-          </article>
+  <!-- INFO BOX -->
+  <div class="card" style="padding:22px; margin-bottom:32px; border:1px solid rgba(214,170,82,.25); background:rgba(214,170,82,.05);">
+    <p style="margin:0 0 10px; font-weight:600;">
+      Każdy program realizujemy indywidualnie – redukcja, budowa sylwetki lub wyjście z bólu pleców.
+    </p>
+    <p style="margin:0; color:var(--muted); font-size:15px;">
+      Jeśli dopiero zaczynasz — wybierz prowadzenie stacjonarne lub hybrydowe,
+      żeby uniknąć błędów i przyspieszyć efekty.
+    </p>
+  </div>
 
-          <article class="card service-card">
-            <div class="tag">Z dowolnego miejsca</div>
-            <h3>Współpraca online</h3>
-            <p>
-              Dla osób spoza Łodzi albo tych, które chcą trenować samodzielnie,
-              ale według konkretnego systemu i z kontrolą trenera.
-            </p>
-            <ul>
-              <li>plan treningowy dopasowany do poziomu</li>
-              <li>rozpiska żywieniowa lub makro</li>
-              <li>analiza techniki ćwiczeń</li>
-              <li>regularna kontrola postępów</li>
-              <li>wsparcie i prowadzenie online</li>
-            </ul>
-          </article>
-        </div>
+  <!-- PROGRAMY -->
+  <div class="grid-3">
+
+    <article class="card service-card">
+      <div class="tag">Najczęściej wybierany</div>
+      <h3>Metamorfoza Sylwetki – 90 dni</h3>
+      <p>Spal tłuszcz, popraw wygląd sylwetki i zobacz realną zmianę w lustrze.</p>
+      <a href="#formularz" class="btn btn-secondary" style="margin-top:16px;">Chcę ten efekt</a>
+    </article>
+
+    <article class="card service-card">
+      <div class="tag">Ból pleców</div>
+      <h3>Reset Kręgosłupa – 90 dni</h3>
+      <p>Pozbądź się bólu pleców i wróć do sprawnego, silnego ciała.</p>
+      <a href="#formularz" class="btn btn-secondary" style="margin-top:16px;">To jest dla mnie</a>
+    </article>
+
+    <article class="card service-card">
+      <div class="tag">Start</div>
+      <h3>Od zera do formy – 90 dni</h3>
+      <p>Zacznij bez chaosu i błędów — krok po kroku do pierwszych efektów.</p>
+      <a href="#formularz" class="btn btn-secondary" style="margin-top:16px;">Zaczynam od zera</a>
+    </article>
+
+  </div>
+
+  <!-- PRZEJŚCIE -->
+  <div style="margin:50px 0 20px;">
+    <h3 style="margin-bottom:10px;">Wybierz poziom prowadzenia</h3>
+    <p style="color:var(--muted); max-width:700px;">
+      Ten sam program możesz realizować w różnych modelach — różnią się poziomem kontroli i tempem efektów.
+    </p>
+  </div>
+
+  <!-- OFERTA -->
+  <div class="grid-3">
+
+    <!-- STACJONARNA -->
+    <article class="card service-card" style="border:1px solid rgba(214,170,82,.4); transform:scale(1.03);">
+      <div class="tag">Największe efekty</div>
+      <h3>Prowadzenie 1:1 (stacjonarne)</h3>
+      <p>
+        Trening pod moim nadzorem = brak błędów, szybszy progres i pełna kontrola.
+      </p>
+
+      <ul>
+        <li>każdy ruch korygowany na bieżąco</li>
+        <li>natychmiastowe przyspieszenie efektów</li>
+        <li>wiedza: trening, dieta, nawyki</li>
+        <li>ciągłe prowadzenie i wsparcie</li>
+      </ul>
+
+      <a href="#formularz" class="btn btn-primary" style="margin-top:16px;">
+        Wybieram najszybszą drogę
+      </a>
+    </article>
+
+    <!-- HYBRYDA -->
+    <article class="card service-card">
+      <div class="tag">Najczęściej wybierane</div>
+      <h3>Prowadzenie hybrydowe</h3>
+      <p>
+        Połączenie pracy ze mną i treningów samodzielnych według planu.
+      </p>
+
+      <ul>
+        <li>2 treningi w miesiącu ze mną</li>
+        <li>plan dopasowany do celu</li>
+        <li>analiza nagrań i korekty</li>
+        <li>cotygodniowy check-in</li>
+      </ul>
+
+      <a href="#formularz" class="btn btn-primary" style="margin-top:16px;">
+        To najlepszy wybór dla mnie
+      </a>
+    </article>
+
+    <!-- ONLINE -->
+    <article class="card service-card" style="opacity:.95;">
+      <div class="tag">Dla osób samodzielnych</div>
+      <h3>Prowadzenie online</h3>
+
+      <p>
+        Dla osób, które już trenują i chcą działać według konkretnego systemu.
+      </p>
+
+      <!-- PREMIUM -->
+      <div style="margin-top:16px; padding:16px; border-radius:16px; border:1px solid rgba(214,170,82,.35); background:rgba(214,170,82,.06);">
+        <strong>Pakiet Premium</strong>
+        <ul style="margin-top:10px;">
+          <li>plan aktualizowany na bieżąco</li>
+          <li>jadłospis + makro</li>
+          <li>nielimitowana analiza wideo</li>
+          <li>stały kontakt (WhatsApp)</li>
+          <li>cotygodniowy raport</li>
+        </ul>
+
+        <a href="#formularz" class="btn btn-primary" style="margin-top:12px;">
+          Chcę pełne prowadzenie online
+        </a>
       </div>
+
+      <!-- STANDARD -->
+      <div style="margin-top:12px; padding:14px; border-radius:14px; border:1px solid var(--line); background:rgba(255,255,255,.02);">
+        <strong style="font-size:14px;">Pakiet Standard</strong>
+        <p style="font-size:13px; color:var(--muted);">
+          Dla osób, które potrzebują planu i podstawowej kontroli.
+        </p>
+      </div>
+
+      <p style="margin-top:14px; font-weight:600;">
+        Najlepiej dla osób z doświadczeniem.
+      </p>
+    </article>
+
+  </div>
+
+</div>
     </section>
 
     <section class="section">
@@ -1151,5 +1259,10 @@ Chcę rozpocząć współpracę
       <div>Trener personalny • Łódź • Współpraca stacjonarna, hybrydowa i online</div>
     </div>
   </footer>
+  <div class="sticky-cta">
+  <a href="#formularz">
+    Sprawdź czy się kwalifikujesz
+  </a>
+</div>
 </body>
 </html>
