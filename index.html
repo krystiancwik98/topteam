@@ -337,6 +337,12 @@ font-size:15px;
       content:"";position:absolute;left:0;top:0;width:100%;height:4px;
       background:linear-gradient(90deg,var(--gold),transparent)
     }
+    .program-selected{
+  border:1px solid rgba(214,170,82,.8) !important;
+  box-shadow:0 0 0 2px rgba(214,170,82,.22), 0 24px 70px rgba(0,0,0,.28);
+  transform:scale(1.02);
+  transition:all .25s ease;
+}
     .tag{
       display:inline-block;
       padding:7px 11px;border-radius:999px;
@@ -646,7 +652,7 @@ box-shadow: 0 0 0 1000px #1a1d22 inset !important;
         <a href="#kontakt">Kontakt</a>
       </nav>
 
-      <a href="#wybor-programu" class="btn btn-primary desktop-only">Formularz zgłoszeniowy</a>
+      <a href="#wybor-programu" class="btn btn-primary desktop-only">Sprawdź, czy się kwalifikujesz</a>
     </div>
   </header>
 
@@ -856,9 +862,9 @@ box-shadow: 0 0 0 1000px #1a1d22 inset !important;
       </p>
     </div>
 
-    <div id="selected-program" style="margin-bottom:20px; font-weight:700; color:var(--gold2);">
-      Wybrany program: jeszcze nie wybrano
-    </div>
+    <div id="selected-program" style="display:none; margin-bottom:20px; font-weight:700; color:var(--gold2);">
+  Wybrany program: jeszcze nie wybrano
+</div>
 
     <div class="grid-3">
 
@@ -1109,7 +1115,7 @@ box-shadow: 0 0 0 1000px #1a1d22 inset !important;
               <li>ustalimy, czy to odpowiedni moment na start</li>
             </ul>
 
-            <a href="#wybor-programu" class="btn btn-primary" style="width:100%;">Przejdź do formularza zgłoszeniowego</a>
+            <a href="#wybor-programu" class="btn btn-primary" style="width:100%;">Sprawdź, czy się kwalifikujesz</a>
           </div>
         </div>
       </div>
@@ -1261,12 +1267,10 @@ Chcę rozpocząć współpracę
   </div>
 </section>
   </main>
-
- </footer>
-
+  
 <div class="sticky-cta">
   <a href="#wybor-programu">
-    Sprawdź czy się kwalifikujesz
+    Sprawdź, czy się kwalifikujesz
   </a>
 </div>
 
@@ -1288,7 +1292,19 @@ programButtons.forEach(button => {
   button.addEventListener('click', function () {
     selectedProgram = this.getAttribute('data-program');
 
+    // usuń podświetlenie ze wszystkich kart programu
+    document.querySelectorAll('#wybor-programu .service-card').forEach(card => {
+      card.classList.remove('program-selected');
+    });
+
+    // dodaj podświetlenie klikniętej karcie
+    const selectedCard = this.closest('.service-card');
+    if (selectedCard) {
+      selectedCard.classList.add('program-selected');
+    }
+
     if (selectedProgramBox) {
+      selectedProgramBox.style.display = "block";
       selectedProgramBox.textContent = "Wybrany program: " + selectedProgram;
     }
 
@@ -1299,11 +1315,30 @@ programButtons.forEach(button => {
     if (formProgramInput) {
       formProgramInput.value = selectedProgram;
     }
+
+    const cooperationStep = document.getElementById('wybor-wspolpracy');
+    if (cooperationStep) {
+      cooperationStep.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
   });
 });
 
 typeButtons.forEach(button => {
   button.addEventListener('click', function () {
+
+    if (!selectedProgram) {
+      alert("Najpierw wybierz program powyżej 👆");
+
+      document.getElementById('wybor-programu').scrollIntoView({
+        behavior: "smooth"
+      });
+
+      return;
+    }
+
     selectedType = this.getAttribute('data-typ');
 
     if (formTypeInput) {
@@ -1313,18 +1348,8 @@ typeButtons.forEach(button => {
     if (previewType) {
       previewType.textContent = "Forma współpracy: " + selectedType;
     }
-
-    if (!selectedProgram) {
-      if (selectedProgramBox) {
-        selectedProgramBox.textContent = "Najpierw wybierz program powyżej.";
-      }
-      if (previewProgram) {
-        previewProgram.textContent = "Program: najpierw wybierz program";
-      }
-    }
   });
 });
 </script>
-
 </body>
 </html>
